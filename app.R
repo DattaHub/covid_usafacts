@@ -49,11 +49,11 @@ simplst_by_state <- simplst_covid %>%
 ui <- fluidPage(
   tags$style("* { font-family: Arial; }"),
   
-  titlePanel("COVID-19 Outbreak Plot"),
+  titlePanel("COVID-19 Outbreak Plot from USA facts Data"),
   
   sidebarLayout(
     sidebarPanel(
-      p("This plot represents the cumulative number of confirmed COVID-19 cases by selected states."),
+      p("This plot shows the cumulative number of confirmed COVID-19 cases by selected states."),
       p("Source data: ", a("USA Facts Covid-19 page", target="_blank", href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/")),
       
       dateRangeInput("dates",  h4("Date Range"), start = min(simplst_by_state$date), end = max(simplst_by_state$date)),
