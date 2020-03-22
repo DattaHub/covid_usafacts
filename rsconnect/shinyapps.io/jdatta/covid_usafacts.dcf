@@ -1,0 +1,12 @@
+name: covid_usafacts
+title: covid_usafacts
+username:
+account: jdatta
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1977757
+bundleId: 2909140
+url: https://jdatta.shinyapps.io/covid_usafacts/
+when: 1584899403.70482
+asMultiple: FALSE
+asStatic: FALSE
