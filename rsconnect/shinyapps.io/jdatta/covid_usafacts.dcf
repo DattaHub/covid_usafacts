@@ -5,8 +5,8 @@ account: jdatta
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1977757
-bundleId: 2909140
+bundleId: 2909471
 url: https://jdatta.shinyapps.io/covid_usafacts/
-when: 1584899403.70482
+when: 1584904401.6914
 asMultiple: FALSE
 asStatic: FALSE

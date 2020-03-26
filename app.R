@@ -34,9 +34,9 @@ covid_deaths_usafacts <- covid_deaths_usafacts %>%
 
 covid_deaths_usafacts  <- tibble::rowid_to_column(covid_deaths_usafacts, "ID")
 
-simplr_covid_deaths <- covid_deaths_usafacts %>% select(date, countyFIPS, deaths)
+simplr_covid_deaths <- covid_deaths_usafacts %>% select(date, State, countyFIPS, deaths)
 
-simplst_covid <- left_join(covid_confirmed_usafacts, simplr_covid_deaths, by = c("countyFIPS", "date"))
+simplst_covid <- left_join(covid_confirmed_usafacts, simplr_covid_deaths, by = c("countyFIPS", "State", "date"))
 
 
 simplst_by_state <- simplst_covid %>% 
@@ -55,6 +55,8 @@ ui <- fluidPage(
     sidebarPanel(
       p("This plot shows the cumulative number of confirmed COVID-19 cases by selected states."),
       p("Source data: ", a("USA Facts Covid-19 page", target="_blank", href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/")),
+      p("Modified from: ", a("Max Salvatore's source code (Github)", target="_blank", href="https://github.com/maxsal/covid_19")),
+      p("Source code for this app: ", a("Github", target="_blank", href="https://github.com/DattaHub/covid_usafacts")),
       
       dateRangeInput("dates",  h4("Date Range"), start = min(simplst_by_state$date), end = max(simplst_by_state$date)),
       checkboxGroupInput(inputId = "line",
