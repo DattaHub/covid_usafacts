@@ -14,23 +14,23 @@ library(RColorBrewer)
 
 library(readxl)
 covid_confirmed_usafacts <- read_excel("covid_confirmed_usafacts.xlsx", col_types = c("numeric", "text", "text", "text", 
-                                                                                      rep("numeric", 59)))
+                                                                                      rep("numeric", 67)))
 covid_confirmed_usafacts %>% 
-  gather(date, confirmed, `43852`:`43910`, convert = TRUE)
+  gather(date, confirmed, `43852`:`43918`, convert = TRUE)
 covid_confirmed_usafacts  <- tibble::rowid_to_column(covid_confirmed_usafacts, "ID")
 
 library(readxl)
 covid_confirmed_usafacts <- read_excel("covid_confirmed_usafacts.xlsx", col_types = c("numeric", "text", "text", "text", 
-                                                                                      rep("numeric", 59)))
+                                                                                      rep("numeric", 67)))
 covid_confirmed_usafacts <- covid_confirmed_usafacts %>% 
-  gather(date, confirmed, `43852`:`43910`, convert = TRUE) %>% mutate(date = excel_numeric_to_date(date))
+  gather(date, confirmed, `43852`:`43918`, convert = TRUE) %>% mutate(date = excel_numeric_to_date(date))
 covid_confirmed_usafacts  <- tibble::rowid_to_column(covid_confirmed_usafacts, "ID")
 
 
 covid_deaths_usafacts <- read_excel("covid_deaths_usafacts.xlsx", col_types = c("numeric", "text", "text", "text", 
-                                                                                rep("numeric", 59)))
+                                                                                rep("numeric", 67)))
 covid_deaths_usafacts <- covid_deaths_usafacts %>% 
-  gather(date, deaths, `43852`:`43910`, convert = TRUE) %>% mutate(date = excel_numeric_to_date(date))
+  gather(date, deaths, `43852`:`43918`, convert = TRUE) %>% mutate(date = excel_numeric_to_date(date))
 
 covid_deaths_usafacts  <- tibble::rowid_to_column(covid_deaths_usafacts, "ID")
 
